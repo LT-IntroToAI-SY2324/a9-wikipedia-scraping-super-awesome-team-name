@@ -26,15 +26,15 @@ print(address_matches.groups())
 # problem 3
 # should match all hashtags
 tweet_string = "hi everyone! #cs #python #LT #champions"
-pat = re.compile("(#.+)+", re.IGNORECASE)
+pat = re.compile("#\w+", re.IGNORECASE)
 hashtag_matches = pat.findall(tweet_string)
 print(hashtag_matches)
-print(hashtag_matches.groups())
+# print(hashtag_matches.groups())
 
 # until you uncomment any code line below you'll get an EOF linting error feel free to
 # ignore it
 if __name__ == "__main__":
-    print("<<<<< Date Problem >>>>>\n")
+    # print("<<<<< Date Problem >>>>>\n")
     # uncomment the following prints to see date results and asserts to test
     # print(f"month is: {date_matches.group(1)}!") # should print "month is: November"
     # print(f"day is: {date_matches.group(2)}!")   # should print "day is: 9"
@@ -60,8 +60,8 @@ if __name__ == "__main__":
 
     print("<<<<< Hashtag Problem >>>>>\n")
     # uncomment the following prints to see results and asserts to test
-    # print(f"hashtags are: {mats}") # should be ['cs', 'python', 'LT', 'champions']"
-    # assert hashtag_matches == ['cs', 'python', 'LT', 'champions'], "Incorrect hashtags"
-    # print('\n<<<< Hashtag extraction tests passed >>>>\n')
+    print(f"hashtags are: {hashtag_matches}") # should be ['cs', 'python', 'LT', 'champions']"
+    assert hashtag_matches == ['cs', 'python', 'LT', 'champions'], "Incorrect hashtags"
+    print('\n<<<< Hashtag extraction tests passed >>>>\n')
 
     # print('\n<<<< All tests passed! >>>>')
